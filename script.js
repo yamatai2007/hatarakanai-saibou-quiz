@@ -19,3 +19,31 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const antigenCountInput = document.getElementById("antigenCount");
+    const decreaseButton = document.getElementById("decrease");
+    const increaseButton = document.getElementById("increase");
+    const nextButton = document.getElementById("nextButton");
+
+    if (antigenCountInput && decreaseButton && increaseButton && nextButton) {
+        // カウント増減ボタン
+        decreaseButton.addEventListener("click", function () {
+            let currentValue = parseInt(antigenCountInput.value);
+            if (currentValue > 0) {
+                antigenCountInput.value = currentValue - 1;
+            }
+        });
+
+        increaseButton.addEventListener("click", function () {
+            let currentValue = parseInt(antigenCountInput.value);
+            antigenCountInput.value = currentValue + 1;
+        });
+
+        // 次へボタン
+        nextButton.addEventListener("click", function () {
+            let antigenCount = parseInt(antigenCountInput.value);
+            localStorage.setItem("antigenCount", antigenCount);
+            window.location.href = "quiz_level.html"; // クイズ難易度選択へ遷移
+        });
+    }
+});
