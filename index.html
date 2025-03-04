@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>クイズスタート</title>
+    <title>はたらかない細胞 - クイズ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>クイズゲーム</h1>
-    <p>グループ名を入力してください</p>
-    <input type="text" id="groupName" placeholder="グループ名">
+    <h1>はたらかない細胞 クイズ</h1>
     <button id="startButton">ゲームスタート</button>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById("startButton").addEventListener("click", function () {
+            window.location.href = "group.html"; // グループ名入力画面へ移動
+        });
+    </script>
 </body>
 </html>
