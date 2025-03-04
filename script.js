@@ -1,34 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // タイトル画面のボタン処理
     const startButton = document.getElementById("startButton");
     if (startButton) {
         startButton.addEventListener("click", function () {
-            window.location.href = "index.html";
+            window.location.href = "group.html"; // グループ名入力画面へ遷移
         });
     }
 
-    // グループ名入力処理
     const nextButton = document.getElementById("nextButton");
     if (nextButton) {
         nextButton.addEventListener("click", function () {
-            const groupName = document.getElementById("groupName").value.trim();
-            if (groupName !== "") {
+            const groupName = document.getElementById("groupName").value;
+            if (groupName.trim() !== "") {
                 localStorage.setItem("groupName", groupName);
-                window.location.href = "nextPage.html";
+                window.location.href = "antigen.html"; // 次の画面へ遷移（仮）
             } else {
                 alert("グループ名を入力してください");
             }
         });
-    }
-
-    // グループ名表示処理
-    const displayGroupName = document.getElementById("displayGroupName");
-    if (displayGroupName) {
-        const savedGroupName = localStorage.getItem("groupName");
-        if (savedGroupName) {
-            displayGroupName.textContent = savedGroupName;
-        } else {
-            displayGroupName.textContent = "ゲスト";
-        }
     }
 });
