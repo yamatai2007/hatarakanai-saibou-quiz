@@ -1,72 +1,37 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f8ff; /* 青系の優しい背景色 */
-    color: #333;
-}
-
 .container {
-    margin-top: 100px;
+    text-align: center;
+    margin-top: 50px;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #007bff; /* 青色 */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-input {
-    padding: 10px;
-    font-size: 16px;
-    margin: 10px;
-    width: 200px;
-}
 .counter {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     margin: 20px 0;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 18px;
+.counter button {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
 }
 
-input[type="number"] {
+.counter input {
     width: 60px;
+    height: 40px;
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
+    margin: 0 10px;
 }
+
 .button-container {
     display: flex;
-    justify-content: space-between; /* 左右に配置 */
-    margin-top: 20px;
+    justify-content: center;
+    gap: 10px;
 }
 
-#nextButtonAntigen {
-    background-color: #4CAF50; /* 緑色 */
-    color: white;
+.button-container button {
     padding: 10px 20px;
-    border: none;
-    cursor: pointer;
     font-size: 16px;
-}
-
-#backButton {
-    background-color: #f44336; /* 赤色 */
-    color: white;
-    padding: 10px 20px;
-    border: none;
     cursor: pointer;
-    font-size: 16px;
 }
