@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>グループ名入力</title>
-    <link rel="stylesheet" href="style.css"> <!-- CSS 読み込み -->
-    <script src="script.js" defer></script> <!-- JavaScript 読み込み -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>グループ名を入力</h1>
-        <input type="text" id="groupName" placeholder="グループ名を入力">
-        <button id="nextButton">次へ</button>
-    </div>
+    <h1>グループ名を入力してください</h1>
+    <input type="text" id="groupName" placeholder="グループ名">
+    <button id="nextButton">次へ</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nextButton = document.getElementById("nextButton");
+
+            nextButton.addEventListener("click", function () {
+                const groupName = document.getElementById("groupName").value.trim();
+                if (groupName !== "") {
+                    localStorage.setItem("groupName", groupName); // グループ名を保存
+                    window.location.href = "nextPage.html"; // 確認ページへ移動
+                } else {
+                    alert("グループ名を入力してください");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
