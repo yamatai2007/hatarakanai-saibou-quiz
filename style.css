@@ -1,8 +1,8 @@
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #ffebee; /* 優しいピンク */
-    color: #333;
+    background-color: #e3f2fd; /* 優しい青 */
+    color: #1565c0; /* 濃いめの青 */
 }
 
 .container {
@@ -11,19 +11,31 @@ body {
 
 h1 {
     font-size: 2em;
-    color: #d32f2f; /* 赤系 */
+    color: #0d47a1; /* さらに濃い青 */
 }
 
 button {
     font-size: 1.5em;
     padding: 10px 20px;
     border: none;
-    background-color: #f06292; /* ピンク系 */
+    background-color: #42a5f5; /* 明るめの青 */
     color: white;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #e91e63; /* 少し濃いピンク */
+    background-color: #1e88e5; /* 濃い青 */
+}
+
+input {
+    font-size: 1.2em;
+    padding: 10px;
+    border: 2px solid #42a5f5;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #1e88e5;
 }
