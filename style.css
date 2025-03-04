@@ -1,37 +1,124 @@
-.container {
-    text-align: center;
-    margin-top: 50px;
+/* リセットCSSの例 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5要素の表示をブロックレベルに設定 */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+/* 本文の行高を設定 */
+body {
+    line-height: 1;
+}
+/* リストのスタイルをなしに設定 */
+ol, ul {
+    list-style: none;
+}
+/* 引用符のスタイルをなしに設定 */
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+/* テーブルのボーダー間隔を設定 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
+/* コンテナのスタイル */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* タイトルのスタイル */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* カウンターのスタイル */
 .counter {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
+/* カウンターボタンのスタイル */
 .counter button {
+    font-size: 20px;
     width: 40px;
     height: 40px;
-    font-size: 24px;
+    margin: 0 10px;
+    cursor: pointer;
 }
 
+/* カウンター入力フィールドのスタイル */
 .counter input {
     width: 60px;
-    height: 40px;
     text-align: center;
-    font-size: 24px;
-    margin: 0 10px;
+    font-size: 18px;
+    padding: 5px;
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.button-container button {
+/* ボタンのスタイル */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ボタンのホバースタイル */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 戻るボタンのスタイル */
+#backButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #6c757d;
 }
