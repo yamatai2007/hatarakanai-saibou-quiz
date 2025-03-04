@@ -1,8 +1,9 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #e3f2fd; /* 優しい青 */
-    color: #1565c0; /* 濃いめの青 */
+    background-color: #f0f8ff; /* 明るい青系の背景 */
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -10,32 +11,26 @@ body {
 }
 
 h1 {
-    font-size: 2em;
-    color: #0d47a1; /* さらに濃い青 */
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    width: 80%;
+    max-width: 300px;
 }
 
 button {
-    font-size: 1.5em;
     padding: 10px 20px;
-    border: none;
-    background-color: #42a5f5; /* 明るめの青 */
+    font-size: 16px;
+    background-color: #007BFF;
     color: white;
-    border-radius: 5px;
+    border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #1e88e5; /* 濃い青 */
-}
-
-input {
-    font-size: 1.2em;
-    padding: 10px;
-    border: 2px solid #42a5f5;
-    border-radius: 5px;
-    outline: none;
-}
-
-input:focus {
-    border-color: #1e88e5;
+    background-color: #0056b3;
 }
