@@ -43,3 +43,32 @@ input {
     border: 1px solid #90caf9;
     border-radius: 5px;
 }
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.counter button {
+    font-size: 20px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.counter button:hover {
+    background-color: #2980b9;
+}
+
+.counter input {
+    font-size: 18px;
+    width: 60px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
