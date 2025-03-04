@@ -47,3 +47,26 @@ input[type="number"] {
     text-align: center;
     font-size: 18px;
 }
+.button-container {
+    display: flex;
+    justify-content: space-between; /* 左右に配置 */
+    margin-top: 20px;
+}
+
+#nextButtonAntigen {
+    background-color: #4CAF50; /* 緑色 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#backButton {
+    background-color: #f44336; /* 赤色 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
