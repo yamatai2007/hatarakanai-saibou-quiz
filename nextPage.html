@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>抗原数の入力</title>
+    <title>確認ページ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>抗原数を入力してください</h1>
-    <input type="number" id="antigenCount" min="0">
-    <button id="nextButton">次へ</button>
+    <h1>ようこそ！</h1>
+    <p id="displayGroupName"></p>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const groupName = localStorage.getItem("groupName"); // 保存されたグループ名を取得
+            if (groupName) {
+                document.getElementById("displayGroupName").textContent = `グループ名: ${groupName}`;
+            } else {
+                document.getElementById("displayGroupName").textContent = "グループ名が見つかりません";
+            }
+        });
+    </script>
 </body>
 </html>
