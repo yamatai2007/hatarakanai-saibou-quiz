@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const nextButton = document.getElementById("nextButton");
+
     if (nextButton) {
         nextButton.addEventListener("click", function () {
             const groupName = document.getElementById("groupName").value;
