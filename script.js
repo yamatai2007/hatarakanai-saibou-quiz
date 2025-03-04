@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ==============================
-    // 3. 抗原数入力の処理
+    // 3. 抗原数入力の処理（修正済み）
     // ==============================
     const antigenCountInput = document.getElementById("antigenCount");
     const decreaseButton = document.getElementById("decrease");
@@ -34,27 +34,43 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextButtonAntigen = document.getElementById("nextButtonAntigen");
 
     if (antigenCountInput && decreaseButton && increaseButton && nextButtonAntigen) {
-        // 初期値セット
-        antigenCountInput.value = 0;
+        let antigenCount = 0; // 初期値
 
-        // カウント増減ボタン
+        // 画面表示を更新する関数
+        function updateDisplay() {
+            antigenCountInput.value = antigenCount;
+        }
+
+        // マイナスボタン
         decreaseButton.addEventListener("click", function () {
-            let currentValue = parseInt(antigenCountInput.value);
-            if (currentValue > 0) {
-                antigenCountInput.value = currentValue - 1;
+            if (antigenCount > 0) {
+                antigenCount--;
+                updateDisplay();
             }
         });
 
+        // プラスボタン
         increaseButton.addEventListener("click", function () {
-            let currentValue = parseInt(antigenCountInput.value);
-            antigenCountInput.value = currentValue + 1;
+            antigenCount++;
+            updateDisplay();
         });
 
         // 次へボタン
         nextButtonAntigen.addEventListener("click", function () {
-            let antigenCount = parseInt(antigenCountInput.value);
             localStorage.setItem("antigenCount", antigenCount);
             window.location.href = "quiz_level.html"; // クイズ難易度選択へ遷移
+        });
+
+        updateDisplay(); // 初期表示
+    }
+
+    // ==============================
+    // 4. 戻るボタンの処理（全ページ対応）
+    // ==============================
+    const backButton = document.getElementById("backButton");
+    if (backButton) {
+        backButton.addEventListener("click", function () {
+            window.history.back(); // 1つ前のページに戻る
         });
     }
 });
