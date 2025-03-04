@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // ==============================
+    // 1. ゲームスタート画面の処理
+    // ==============================
     const startButton = document.getElementById("startButton");
     if (startButton) {
         startButton.addEventListener("click", function () {
@@ -6,26 +9,34 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const nextButton = document.getElementById("nextButton");
-    if (nextButton) {
-        nextButton.addEventListener("click", function () {
+    // ==============================
+    // 2. グループ名入力の処理
+    // ==============================
+    const nextButtonGroup = document.getElementById("nextButton");
+    if (nextButtonGroup) {
+        nextButtonGroup.addEventListener("click", function () {
             const groupName = document.getElementById("groupName").value;
             if (groupName.trim() !== "") {
                 localStorage.setItem("groupName", groupName);
-                window.location.href = "antigen.html"; // 次の画面へ遷移（仮）
+                window.location.href = "antigen.html"; // 抗原数入力画面へ遷移
             } else {
                 alert("グループ名を入力してください");
             }
         });
     }
-});
-document.addEventListener("DOMContentLoaded", function () {
+
+    // ==============================
+    // 3. 抗原数入力の処理
+    // ==============================
     const antigenCountInput = document.getElementById("antigenCount");
     const decreaseButton = document.getElementById("decrease");
     const increaseButton = document.getElementById("increase");
-    const nextButton = document.getElementById("nextButton");
+    const nextButtonAntigen = document.getElementById("nextButtonAntigen");
 
-    if (antigenCountInput && decreaseButton && increaseButton && nextButton) {
+    if (antigenCountInput && decreaseButton && increaseButton && nextButtonAntigen) {
+        // 初期値セット
+        antigenCountInput.value = 0;
+
         // カウント増減ボタン
         decreaseButton.addEventListener("click", function () {
             let currentValue = parseInt(antigenCountInput.value);
@@ -40,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // 次へボタン
-        nextButton.addEventListener("click", function () {
+        nextButtonAntigen.addEventListener("click", function () {
             let antigenCount = parseInt(antigenCountInput.value);
             localStorage.setItem("antigenCount", antigenCount);
             window.location.href = "quiz_level.html"; // クイズ難易度選択へ遷移
