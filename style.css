@@ -1,49 +1,37 @@
-/* 全体の基本スタイル */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #e3f2fd, #bbdefb); /* 優しい水色グラデーション */
+    font-family: Arial, sans-serif;
+    background-color: #e3f2fd; /* 明るい青系 */
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-/* タイトル */
-h1 {
-    font-size: 2em;
-    color: #d32f2f; /* 赤系の強調色 */
+.container {
     margin-top: 50px;
 }
 
-/* 入力欄 */
-input[type="text"] {
-    width: 60%;
-    padding: 10px;
-    font-size: 1.2em;
-    border: 2px solid #64b5f6; /* 青系 */
-    border-radius: 8px;
-    outline: none;
-    margin: 20px 0;
+h1 {
+    color: #1565c0;
 }
 
-/* ボタンの共通スタイル */
 button {
-    background-color: #42a5f5; /* 明るい青 */
+    background-color: #1976d2;
     color: white;
     border: none;
-    padding: 12px 20px;
-    font-size: 1.2em;
-    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
     cursor: pointer;
-    transition: 0.3s;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #1e88e5; /* 濃い青（ホバー時） */
+    background-color: #1565c0;
 }
 
-/* グループ名表示 */
-p {
-    font-size: 1.5em;
-    color: #333;
-    font-weight: bold;
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #1976d2;
+    border-radius: 5px;
+    text-align: center;
 }
