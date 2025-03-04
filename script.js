@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // ゲームスタート画面の処理
+    // ==============================
+    // 1. ゲームスタート画面の処理
+    // ==============================
     const startButton = document.getElementById("startButton");
     if (startButton) {
         startButton.addEventListener("click", function () {
@@ -7,8 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // グループ名入力の処理
-    const nextButtonGroup = document.getElementById("nextButton");
+    // ==============================
+    // 2. グループ名入力の処理
+    // ==============================
+    const nextButtonGroup = document.getElementById("nextButtonGroup");
     if (nextButtonGroup) {
         nextButtonGroup.addEventListener("click", function () {
             const groupName = document.getElementById("groupName").value;
@@ -21,14 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 抗原数入力の処理
+    // ==============================
+    // 3. 抗原数入力の処理
+    // ==============================
     const antigenCountInput = document.getElementById("antigenCount");
     const decreaseButton = document.getElementById("decrease");
     const increaseButton = document.getElementById("increase");
     const nextButtonAntigen = document.getElementById("nextButtonAntigen");
 
     if (antigenCountInput && decreaseButton && increaseButton && nextButtonAntigen) {
-        let antigenCount = parseInt(antigenCountInput.value, 10);
+        let antigenCount = 0; // 初期値
 
         // 画面表示を更新する関数
         function updateDisplay() {
@@ -69,7 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
         updateDisplay(); // 初期表示
     }
 
-    // 戻るボタンの処理（全ページ対応）
+    // ==============================
+    // 4. 戻るボタンの処理（全ページ対応）
+    // ==============================
     const backButton = document.getElementById("backButton");
     if (backButton) {
         backButton.addEventListener("click", function () {
