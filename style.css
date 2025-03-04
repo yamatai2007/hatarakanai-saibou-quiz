@@ -1,37 +1,31 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #e3f2fd; /* 明るい青系 */
     text-align: center;
-    margin: 0;
-    padding: 0;
+    background-color: #f0f8ff; /* 青系の優しい背景色 */
+    color: #333;
 }
 
 .container {
-    margin-top: 50px;
-}
-
-h1 {
-    color: #1565c0;
+    margin-top: 100px;
 }
 
 button {
-    background-color: #1976d2;
-    color: white;
-    border: none;
     padding: 10px 20px;
     font-size: 18px;
-    cursor: pointer;
+    background-color: #007bff; /* 青色 */
+    color: white;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #1565c0;
+    background-color: #0056b3;
 }
 
 input {
     padding: 10px;
     font-size: 16px;
-    border: 2px solid #1976d2;
-    border-radius: 5px;
-    text-align: center;
+    margin: 10px;
+    width: 200px;
 }
