@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const antigenCountInput = document.getElementById("antigenCount");
     const decreaseButton = document.getElementById("decrease");
     const increaseButton = document.getElementById("increase");
-    const nextButtonAntigen = document.getElementById("nextButtonAntigen");
+    const nextButtonAntigen = document.getElementById("nextButton");
 
     if (antigenCountInput && decreaseButton && increaseButton && nextButtonAntigen) {
         let antigenCount = 0; // 初期値
