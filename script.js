@@ -6,7 +6,6 @@ document.getElementById("startButton")?.addEventListener("click", function() {
     window.location.href = "group.html";
 });
 document.addEventListener("DOMContentLoaded", function() {
-    // グループ名入力（group.html）
     let nextButton = document.getElementById("nextButton");
     if (nextButton) {
         nextButton.addEventListener("click", function() {
