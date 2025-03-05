@@ -57,3 +57,8 @@ button:hover {
 .difficulty.selected {
     border-color: blue;
 }
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
