@@ -1,66 +1,81 @@
+/* 全体のスタイル */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e3f2fd;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* コンテナのスタイル */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* タイトルのスタイル */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-h1, h2 {
-    color: #1565c0;
-}
-
-input {
-    width: 80%;
+/* グループ名入力のスタイル */
+input#groupName {
+    width: 80%; /* 幅を広く */
+    font-size: 18px;
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #90caf9;
-    border-radius: 5px;
-    font-size: 16px;
+    margin-bottom: 20px;
 }
 
-button {
-    width: 120px;
-    padding: 10px;
-    margin: 10px;
-    background-color: #64b5f6;
-    color: white;
-    border: none;
-    border-radius: 5px;
+/* カウンターのスタイル */
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* カウンターボタンのスタイル */
+.counter button {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-button:hover {
-    background-color: #42a5f5;
+/* カウンター入力フィールドのスタイル */
+.counter input {
+    width: 80px; /* 直接入力しやすく */
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
 }
 
+/* ボタンのスタイル */
 .button-container {
     display: flex;
     justify-content: space-between;
 }
 
-.difficulty {
-    display: block;
-    width: 80%;
-    margin: 10px auto;
-    padding: 15px;
-    font-size: 18px;
-    background-color: #bbdefb;
-    border: 2px solid #1565c0;
-    border-radius: 5px;
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-.difficulty.selected {
-    background-color: #64b5f6;
-    border-color: #0d47a1;
-    color: white;
+/* 戻るボタンのスタイル */
+#backButton {
+    background-color: #6c757d;
 }
