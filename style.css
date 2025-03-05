@@ -1,21 +1,98 @@
-.container {
+/* 全体のスタイル */
+body {
+    font-family: "Yu Gothic UI", "Arial", sans-serif;
+    background-color: #f0f8ff; /* 淡い青 */
+    color: #333;
     text-align: center;
-    margin-top: 50px;
+    margin: 0;
+    padding: 0;
 }
 
+/* コンテンツを中央に */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px; /* 角を丸める */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* タイトル */
+h1 {
+    font-size: 24px;
+    color: #005f99; /* 落ち着いた青 */
+    margin-bottom: 20px;
+}
+
+/* 入力フィールド */
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #99c2ff; /* 優しい青 */
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* ボタン */
 button {
+    background-color: #99c2ff; /* 淡い青 */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 10px; /* 角を丸く */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #66a3ff; /* 少し濃い青 */
+}
+
+/* カウンターボタン */
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter button {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-color: #99c2ff;
+    border: none;
+    color: white;
+}
+
+.counter button:hover {
+    background-color: #66a3ff;
+}
+
+/* 難易度選択ボタン */
+.level-button {
+    display: inline-block;
     padding: 10px 20px;
     margin: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #99c2ff;
+    background-color: white;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.difficulty {
-    border: 2px solid black;
-    padding: 10px;
-    display: inline-block;
-    margin: 5px;
+.level-button:hover {
+    background-color: #e6f2ff; /* ほんのり青く */
 }
 
-.difficulty.selected {
-    border-color: blue;
+.level-button.selected {
+    border-color: #005f99;
+    background-color: #99c2ff;
+    color: white;
 }
