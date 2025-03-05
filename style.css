@@ -77,10 +77,10 @@ button:hover {
 /* 難易度選択ボタン */
 .level-button {
     display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    border-radius: 10px;
+    padding: 12px 24px; /* 余裕を持たせた */
+    margin: 15px; /* ボタン間のスペースを広げる */
+    font-size: 18px; /* 文字サイズを少し大きく */
+    border-radius: 12px; /* 角をさらに丸める */
     border: 2px solid #99c2ff;
     background-color: white;
     cursor: pointer;
@@ -88,11 +88,19 @@ button:hover {
 }
 
 .level-button:hover {
-    background-color: #e6f2ff; /* ほんのり青く */
+    background-color: #e6f2ff;
 }
 
 .level-button.selected {
     border-color: #005f99;
     background-color: #99c2ff;
     color: white;
+}
+
+/* ボタンを中央配置に */
+.level-container {
+    display: flex;
+    flex-wrap: wrap; /* 必要なら折り返し */
+    justify-content: center; /* 中央寄せ */
+    gap: 15px; /* ボタン間の余白 */
 }
