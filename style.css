@@ -1,166 +1,63 @@
 /* 全体のスタイル */
 body {
-    font-family: "Arial", sans-serif;
-    background-color: #e6f2ff; /* 優しい水色 */
-    color: #005f99; /* 文字色を落ち着いた青系に */
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-/* コンテナの基本スタイル */
 .container {
-    max-width: 600px;
+    max-width: 500px;
     margin: 50px auto;
     background: white;
     padding: 20px;
-    border-radius: 15px; /* 角を丸めて柔らかい印象に */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 軽い影で立体感を */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* タイトル */
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* 入力フィールドのスタイル */
-input[type="text"], input[type="number"] {
-    width: 80%;
-    padding: 10px;
-    font-size: 18px;
-    border: 2px solid #99c2ff;
-    border-radius: 8px;
-    text-align: center;
-}
-
-/* 抗原数入力のボタンとカウンター */
-.counter {
+/* ボタンの配置 */
+.button-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.counter button {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    border: none;
-    border-radius: 50%;
-    background-color: #99c2ff;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+/* 次へボタンを上に配置 */
+#nextButton {
+    order: -1;
 }
 
-.counter button:hover {
-    background-color: #005f99;
-}
-
-/* ボタンの基本スタイル */
+/* ボタンのスタイル */
 button {
-    display: block;
-    width: 80%;
-    max-width: 250px;
-    padding: 12px;
-    margin: 10px auto;
     font-size: 18px;
+    padding: 10px;
     border: none;
-    border-radius: 12px;
-    background-color: #99c2ff;
-    color: white;
+    border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    width: 100%;
 }
 
 button:hover {
-    background-color: #005f99;
+    opacity: 0.8;
 }
 
-/* 戻るボタン */
-#backButton {
-    background-color: #cccccc;
-    color: #333;
-}
-
-#backButton:hover {
-    background-color: #999999;
-}
-
-/* 難易度選択ボタン */
-.level-container {
-    display: flex;
-    flex-wrap: wrap; /* 必要に応じて折り返し */
-    justify-content: center; /* ボタンを中央に配置 */
-    gap: 20px; /* ボタン間のスペースをしっかり確保 */
-    margin-top: 20px; /* 上側にも余白を追加 */
-}
-
-.level-button {
-    display: inline-block;
-    width: 150px; /* ボタンサイズを統一 */
-    padding: 15px 20px; /* 余裕を持たせる */
-    font-size: 20px; /* 文字サイズを少し大きく */
-    border-radius: 12px; /* 角を丸めて柔らかい印象に */
-    border: 3px solid #99c2ff; /* 枠の色を統一 */
-    background-color: white;
-    color: #005f99;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.level-button:hover {
-    background-color: #e6f2ff;
-}
-
-.level-button.selected {
-    border-color: #005f99;
-    background-color: #99c2ff;
-    color: white;
-}
-
-/* クイズ選択肢ボタン */
-.quiz-option {
+/* クイズ難易度選択ボタン */
+.difficulty {
     display: block;
-    width: 80%;
-    max-width: 300px;
-    padding: 15px;
-    margin: 10px auto;
-    font-size: 18px;
-    border: 2px solid #99c2ff;
-    border-radius: 12px;
-    background-color: white;
-    color: #005f99;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.quiz-option:hover {
-    background-color: #e6f2ff;
-}
-
-.quiz-option.selected {
-    border-color: #005f99;
-    background-color: #99c2ff;
-    color: white;
-}
-
-/* クイズ結果表示 */
-#result {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
+    width: 100%;
     padding: 10px;
-    border-radius: 10px;
+    margin: 5px 0;
+    border: 2px solid black; /* デフォルトで黒枠 */
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.correct {
-    color: #008000;
-}
-
-.incorrect {
-    color: #cc0000;
+/* 選択されたボタンの枠を青く */
+.difficulty.selected {
+    border: 2px solid blue;
 }
