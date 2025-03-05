@@ -1,63 +1,59 @@
-/* 全体のスタイル */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    font-family: 'Arial', sans-serif;
+    background-color: #e6f7ff;
     text-align: center;
-    margin: 0;
-    padding: 0;
 }
 
 .container {
-    max-width: 500px;
+    max-width: 400px;
     margin: 50px auto;
-    background: white;
     padding: 20px;
+    background: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ボタンの配置 */
-.button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+h1 {
+    color: #007acc;
 }
 
-/* 次へボタンを上に配置 */
-#nextButton {
-    order: -1;
-}
-
-/* ボタンのスタイル */
-button {
-    font-size: 18px;
+input, button {
+    margin: 10px;
     padding: 10px;
-    border: none;
+    font-size: 16px;
     border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
     cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
+    background-color: #007acc;
+    color: white;
 }
 
 button:hover {
-    opacity: 0.8;
+    background-color: #005f99;
 }
 
-/* クイズ難易度選択ボタン */
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.difficulty-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .difficulty {
-    display: block;
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 2px solid black; /* デフォルトで黒枠 */
-    background: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    border: 2px solid black;
 }
 
-/* 選択されたボタンの枠を青く */
 .difficulty.selected {
-    border: 2px solid blue;
+    border-color: blue;
 }
