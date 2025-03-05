@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>はたらかない細胞 - スタート</title>
+    <title>はたらかない細胞</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <h1>はたらかない細胞</h1>
         <button id="startButton">ゲームスタート</button>
     </div>
+    <script>
+        document.getElementById("startButton").addEventListener("click", function() {
+            window.location.href = "group.html";
+        });
+    </script>
 </body>
 </html>
