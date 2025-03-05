@@ -3,28 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>抗原の数</title>
+    <title>抗原数入力</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <h2>抗原をいくつ捕獲しましたか？</h2>
-        <input type="number" id="antigenCount" min="0" value="0">
+        <h1>捕獲した抗原の数を入力</h1>
+        <div class="counter">
+            <button id="decrease">−</button>
+            <input type="number" id="antigenCount" value="0" min="0">
+            <button id="increase">＋</button>
+        </div>
         <div class="button-container">
             <button id="backButton">戻る</button>
-            <button id="nextButton">次へ</button>
+            <button id="nextButtonAntigen">次へ</button>
         </div>
     </div>
-    <script>
-        document.getElementById("backButton").addEventListener("click", function() {
-            window.location.href = "group.html";
-        });
-
-        document.getElementById("nextButton").addEventListener("click", function() {
-            const antigenCount = document.getElementById("antigenCount").value;
-            localStorage.setItem("antigenCount", antigenCount);
-            window.location.href = "difficulty.html";
-        });
-    </script>
 </body>
 </html>
