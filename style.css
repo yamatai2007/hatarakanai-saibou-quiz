@@ -86,6 +86,12 @@ button {
     margin: 20px 0;
 }
 
+.difficulty-buttons div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .difficulty-btn {
     padding: 10px 20px;
     border: 2px solid gray;
@@ -102,4 +108,10 @@ button {
 .difficulty-btn.selected {
     border-color: blue;
     color: blue;
+}
+
+p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: black;
 }
