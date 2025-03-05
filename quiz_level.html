@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>クイズ難易度選択</title>
+    <title>クイズの難易度選択</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <h1>クイズの難易度を選択</h1>
-        <div class="quiz-level-container">
-            <button class="quiz-level" data-level="1">レベル1</button>
-            <button class="quiz-level" data-level="2">レベル2</button>
-            <button class="quiz-level" data-level="3">レベル3</button>
-            <button class="quiz-level" data-level="4">レベル4</button>
-            <button class="quiz-level" data-level="5">レベル5</button>
+        <h2>クイズの難易度を選んでください</h2>
+        <div id="difficultyButtons">
+            <button class="difficulty" data-level="1">レベル1</button>
+            <button class="difficulty" data-level="2">レベル2</button>
+            <button class="difficulty" data-level="3">レベル3</button>
+            <button class="difficulty" data-level="4">レベル4</button>
+            <button class="difficulty" data-level="5">レベル5</button>
         </div>
         <div class="button-container">
             <button id="backButton">戻る</button>
             <button id="nextButton">次へ</button>
         </div>
     </div>
+    <script>
+        let selectedDifficulty = null;
+        document.querySelectorAll(".difficulty").forEach(button => {
+            button.addEventListener("click", function() {
+                document.querySelectorAll(".difficulty").forEach(btn => btn.classList.remove("selected"));
+                this.classList.add("selected");
+                selectedDifficulty = this.getAttribute("data-level");
+            });
+        });
+
+        document.getElementById("backButton").addEventListener("click", function() {
+            window.location.href = "antigen.html";
+        });
+
+        document.getElementById("nextButton").addEventListener("click", function() {
+            if (!selectedDifficulty) {
+                alert("クイズの難易度を選択してください");
+            } else {
+                localStorage.setItem("difficulty", selectedDifficulty);
+                window.location.href = "quiz.html";
+            }
+        });
+    </script>
 </body>
 </html>
