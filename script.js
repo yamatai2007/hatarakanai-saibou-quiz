@@ -86,22 +86,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 document.addEventListener("DOMContentLoaded", function () {
-    // クイズ難易度選択の処理
     const difficultyButtons = document.querySelectorAll(".difficulty-btn");
     let selectedLevel = null;
 
     difficultyButtons.forEach(button => {
         button.addEventListener("click", function () {
-            // 既存の選択を解除
             difficultyButtons.forEach(btn => btn.classList.remove("selected"));
-
-            // 新しい選択を適用
             this.classList.add("selected");
             selectedLevel = this.getAttribute("data-level");
         });
     });
 
-    // 次へボタンの処理
     const nextButton = document.getElementById("nextButton");
     nextButton.addEventListener("click", function () {
         if (selectedLevel) {
@@ -112,9 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 戻るボタンの処理
     const backButton = document.getElementById("backButton");
-    backButton.addEventListener("click", function () {
-        window.location.href = "antigen.html"; // 抗原数入力画面へ戻る
-    });
+    if (backButton) {
+        backButton.addEventListener("click", function () {
+            window.location.href = "antigen.html"; // 抗原数入力画面へ戻る
+        });
+    }
 });
