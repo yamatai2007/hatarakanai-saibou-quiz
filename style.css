@@ -1,117 +1,21 @@
-/* 全体のスタイル */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* コンテナのスタイル */
 .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-}
-
-/* タイトルのスタイル */
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* グループ名入力のスタイル */
-input#groupName {
-    width: 80%; /* 幅を広く */
-    font-size: 18px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-/* カウンターのスタイル */
-.counter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-/* カウンターボタンのスタイル */
-.counter button {
-    font-size: 20px;
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
-    cursor: pointer;
-}
-
-/* カウンター入力フィールドのスタイル */
-.counter input {
-    width: 80px; /* 直接入力しやすく */
-    text-align: center;
-    font-size: 18px;
-    padding: 5px;
-}
-
-/* ボタンのスタイル */
-.button-container {
-    display: flex;
-    justify-content: space-between;
+    margin-top: 50px;
 }
 
 button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    margin: 10px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
-/* 戻るボタンのスタイル */
-#backButton {
-    background-color: #6c757d;
-}
-.difficulty-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
+.difficulty {
+    border: 2px solid black;
+    padding: 10px;
+    display: inline-block;
+    margin: 5px;
 }
 
-.difficulty-buttons div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.difficulty-btn {
-    padding: 10px 20px;
-    border: 2px solid gray;
-    background-color: white;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s;
-}
-
-.difficulty-btn:hover {
-    background-color: lightgray;
-}
-
-.difficulty-btn.selected {
+.difficulty.selected {
     border-color: blue;
-    color: blue;
-}
-
-p {
-    margin-top: 5px;
-    font-size: 14px;
-    color: black;
 }
