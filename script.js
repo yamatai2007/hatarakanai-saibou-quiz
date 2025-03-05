@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // ゲームスタート画面の処理
+    // ==============================
+    // 1. ゲームスタート画面の処理
+    // ==============================
     const startButton = document.getElementById("startButton");
     if (startButton) {
         startButton.addEventListener("click", function () {
@@ -7,7 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // グループ名入力の処理
+    // ==============================
+    // 2. グループ名入力の処理
+    // ==============================
     const nextButtonGroup = document.getElementById("nextButton");
     if (nextButtonGroup) {
         nextButtonGroup.addEventListener("click", function () {
@@ -21,46 +25,57 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 抗原数入力の処理
+    // ==============================
+    // 3. 抗原数入力の処理
+    // ==============================
     const antigenCountInput = document.getElementById("antigenCount");
     const decreaseButton = document.getElementById("decrease");
     const increaseButton = document.getElementById("increase");
-    const nextButtonAntigen = document.getElementById("nextButton");
 
-    if (antigenCountInput) {
-        let antigenCount = 0;
+    if (antigenCountInput && decreaseButton && increaseButton) {
+        let antigenCount = parseInt(antigenCountInput.value);
 
-        decreaseButton.addEventListener("click", () => {
-            if (antigenCount > 0) antigenCount--;
+        function updateDisplay() {
             antigenCountInput.value = antigenCount;
-        });
+        }
 
-        increaseButton.addEventListener("click", () => {
-            antigenCount++;
-            antigenCountInput.value = antigenCount;
-        });
-
-        nextButtonAntigen.addEventListener("click", () => {
-            if (parseInt(antigenCountInput.value) >= 0) {
-                localStorage.setItem("antigenCount", antigenCountInput.value);
-                window.location.href = "quiz_level.html";
-            } else {
-                alert("抗原数を入力してください");
+        decreaseButton.addEventListener("click", function () {
+            if (antigenCount > 0) {
+                antigenCount--;
+                updateDisplay();
             }
+        });
+
+        increaseButton.addEventListener("click", function () {
+            antigenCount++;
+            updateDisplay();
+        });
+
+        antigenCountInput.addEventListener("input", function () {
+            antigenCount = parseInt(antigenCountInput.value) || 0;
+        });
+
+        updateDisplay();
+    }
+
+    // ==============================
+    // 4. クイズ難易度選択の処理
+    // ==============================
+    const levelButtons = document.querySelectorAll(".level-button");
+
+    if (levelButtons.length > 0) {
+        levelButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                levelButtons.forEach(btn => btn.classList.remove("selected"));
+                this.classList.add("selected");
+                localStorage.setItem("selectedLevel", this.dataset.level);
+            });
         });
     }
 
-    // クイズ難易度選択の処理
-    const difficultyButtons = document.querySelectorAll(".difficulty");
-    difficultyButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            difficultyButtons.forEach(btn => btn.classList.remove("selected"));
-            this.classList.add("selected");
-            localStorage.setItem("difficultyLevel", this.dataset.level);
-        });
-    });
-
-    // 戻るボタンの処理
+    // ==============================
+    // 5. 戻るボタンの処理
+    // ==============================
     const backButton = document.getElementById("backButton");
     if (backButton) {
         backButton.addEventListener("click", function () {
