@@ -1,51 +1,3 @@
-/* リセットCSSの例 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5要素の表示をブロックレベルに設定 */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-/* 本文の行高を設定 */
-body {
-    line-height: 1;
-}
-/* リストのスタイルをなしに設定 */
-ol, ul {
-    list-style: none;
-}
-/* 引用符のスタイルをなしに設定 */
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-/* テーブルのボーダー間隔を設定 */
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
 /* 全体のスタイル */
 body {
     font-family: Arial, sans-serif;
@@ -74,6 +26,14 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* グループ名入力のスタイル */
+input#groupName {
+    width: 80%; /* 幅を広く */
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
 /* カウンターのスタイル */
 .counter {
     display: flex;
@@ -93,13 +53,18 @@ h1 {
 
 /* カウンター入力フィールドのスタイル */
 .counter input {
-    width: 60px;
+    width: 80px; /* 直接入力しやすく */
     text-align: center;
     font-size: 18px;
     padding: 5px;
 }
 
 /* ボタンのスタイル */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 button {
     background-color: #007bff;
     color: #fff;
@@ -110,15 +75,7 @@ button {
     border-radius: 5px;
 }
 
-/* ボタンのホバースタイル */
-button:hover {
-    background-color: #0056b3;
-}
-
 /* 戻るボタンのスタイル */
 #backButton {
-    position: absolute;
-    top: 20px;
-    left: 20px;
     background-color: #6c757d;
 }
