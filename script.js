@@ -1,72 +1,86 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // ゲームスタート画面
+    // ==============================
+    // 1. ゲームスタート画面の処理
+    // ==============================
     const startButton = document.getElementById("startButton");
     if (startButton) {
         startButton.addEventListener("click", function () {
-            window.location.href = "group.html";
+            window.location.href = "group.html"; // グループ名入力画面へ遷移
         });
     }
 
-    // グループ名入力
+    // ==============================
+    // 2. グループ名入力の処理
+    // ==============================
     const nextButtonGroup = document.getElementById("nextButtonGroup");
     if (nextButtonGroup) {
         nextButtonGroup.addEventListener("click", function () {
-            const groupName = document.getElementById("groupName").value.trim();
-            if (groupName !== "") {
+            const groupName = document.getElementById("groupName").value;
+            if (groupName.trim() !== "") {
                 localStorage.setItem("groupName", groupName);
-                window.location.href = "antigen.html";
+                window.location.href = "antigen.html"; // 抗原数入力画面へ遷移
             } else {
                 alert("グループ名を入力してください");
             }
         });
     }
 
-    // 抗原数入力
+    // ==============================
+    // 3. 抗原数入力の処理（修正済み）
+    // ==============================
     const antigenCountInput = document.getElementById("antigenCount");
     const decreaseButton = document.getElementById("decrease");
     const increaseButton = document.getElementById("increase");
     const nextButtonAntigen = document.getElementById("nextButtonAntigen");
 
     if (antigenCountInput && decreaseButton && increaseButton && nextButtonAntigen) {
+        let antigenCount = parseInt(antigenCountInput.value, 10) || 0;
+
+        function updateDisplay() {
+            antigenCountInput.value = antigenCount;
+        }
+
         decreaseButton.addEventListener("click", function () {
-            let value = parseInt(antigenCountInput.value, 10);
-            if (value > 0) antigenCountInput.value = value - 1;
+            if (antigenCount > 0) {
+                antigenCount--;
+                updateDisplay();
+            }
         });
 
         increaseButton.addEventListener("click", function () {
-            let value = parseInt(antigenCountInput.value, 10);
-            antigenCountInput.value = value + 1;
+            antigenCount++;
+            updateDisplay();
+        });
+
+        antigenCountInput.addEventListener("input", function () {
+            antigenCount = parseInt(this.value, 10) || 0;
         });
 
         nextButtonAntigen.addEventListener("click", function () {
-            localStorage.setItem("antigenCount", antigenCountInput.value);
-            window.location.href = "quiz_level.html";
+            localStorage.setItem("antigenCount", antigenCount);
+            window.location.href = "quiz_level.html"; // クイズ難易度選択へ遷移
         });
+
+        updateDisplay();
     }
 
-    // クイズ難易度選択
-    const difficultyButtons = document.querySelectorAll(".difficulty");
-    const nextButtonDifficulty = document.getElementById("nextButtonDifficulty");
-
-    if (difficultyButtons.length > 0 && nextButtonDifficulty) {
-        difficultyButtons.forEach(button => {
+    // ==============================
+    // 4. クイズ難易度選択の処理（修正済み）
+    // ==============================
+    const levelButtons = document.querySelectorAll(".level-button");
+    if (levelButtons.length > 0) {
+        levelButtons.forEach(button => {
             button.addEventListener("click", function () {
-                difficultyButtons.forEach(btn => btn.classList.remove("selected"));
+                levelButtons.forEach(btn => btn.classList.remove("selected"));
                 this.classList.add("selected");
-                localStorage.setItem("quizLevel", this.dataset.level);
+                localStorage.setItem("selectedLevel", this.dataset.level);
             });
         });
-
-        nextButtonDifficulty.addEventListener("click", function () {
-            if (localStorage.getItem("quizLevel")) {
-                window.location.href = "quiz.html";
-            } else {
-                alert("難易度を選択してください");
-            }
-        });
     }
 
-    // 戻るボタン（全ページ対応）
+    // ==============================
+    // 5. 戻るボタンの処理
+    // ==============================
     const backButton = document.getElementById("backButton");
     if (backButton) {
         backButton.addEventListener("click", function () {
