@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==============================
     // 2. グループ名入力の処理
     // ==============================
-    const nextButtonGroup = document.getElementById("nextButtonGroup");
+    const nextButtonGroup = document.getElementById("nextButton");
     if (nextButtonGroup) {
         nextButtonGroup.addEventListener("click", function () {
             const groupName = document.getElementById("groupName").value;
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ==============================
-    // 3. 抗原数入力の処理
+    // 3. 抗原数入力の処理（修正済み）
     // ==============================
     const antigenCountInput = document.getElementById("antigenCount");
     const decreaseButton = document.getElementById("decrease");
@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
             updateDisplay();
         });
 
-        // 直接入力
+        // 直接入力の対応
         antigenCountInput.addEventListener("input", function () {
-            const value = parseInt(antigenCountInput.value, 10);
+            let value = parseInt(antigenCountInput.value, 10);
             if (!isNaN(value) && value >= 0) {
                 antigenCount = value;
             } else {
@@ -76,10 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ==============================
-    // 4. 戻るボタンの処理（全ページ対応）
+    // 4. 戻るボタンの処理（最初のページ以外に適用）
     // ==============================
     const backButton = document.getElementById("backButton");
-    if (backButton) {
+    if (backButton && window.location.pathname !== "/index.html") {
         backButton.addEventListener("click", function () {
             window.history.back(); // 1つ前のページに戻る
         });
