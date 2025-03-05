@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // ==============================
-    // 1. グループ名入力の処理
-    // ==============================
+    // ゲームスタート画面の処理
+    const startButton = document.getElementById("startButton");
+    if (startButton) {
+        startButton.addEventListener("click", function () {
+            window.location.href = "group.html";
+        });
+    }
+
+    // グループ名入力の処理
     const nextButtonGroup = document.getElementById("nextButton");
     if (nextButtonGroup) {
         nextButtonGroup.addEventListener("click", function () {
@@ -15,65 +21,34 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==============================
-    // 2. 抗原数入力の処理
-    // ==============================
+    // 抗原数入力の処理
     const antigenCountInput = document.getElementById("antigenCount");
     const decreaseButton = document.getElementById("decrease");
     const increaseButton = document.getElementById("increase");
 
-    if (antigenCountInput && decreaseButton && increaseButton) {
+    if (antigenCountInput) {
         let antigenCount = 0;
-
-        function updateDisplay() {
+        decreaseButton.addEventListener("click", () => {
+            if (antigenCount > 0) antigenCount--;
             antigenCountInput.value = antigenCount;
-        }
-
-        decreaseButton.addEventListener("click", function () {
-            if (antigenCount > 0) {
-                antigenCount--;
-                updateDisplay();
-            }
         });
-
-        increaseButton.addEventListener("click", function () {
+        increaseButton.addEventListener("click", () => {
             antigenCount++;
-            updateDisplay();
+            antigenCountInput.value = antigenCount;
         });
-
-        antigenCountInput.addEventListener("input", function () {
-            let value = parseInt(antigenCountInput.value);
-            antigenCount = isNaN(value) ? 0 : Math.max(0, value);
-        });
-
-        updateDisplay();
     }
 
-    // ==============================
-    // 3. クイズ難易度選択の処理
-    // ==============================
+    // クイズ難易度選択の処理
     const difficultyButtons = document.querySelectorAll(".difficulty");
-    if (difficultyButtons.length > 0) {
-        difficultyButtons.forEach(button => {
-            button.addEventListener("click", function () {
-                difficultyButtons.forEach(btn => btn.classList.remove("selected"));
-                this.classList.add("selected");
-                localStorage.setItem("selectedDifficulty", this.getAttribute("data-level"));
-            });
+    difficultyButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            difficultyButtons.forEach(btn => btn.classList.remove("selected"));
+            this.classList.add("selected");
+            localStorage.setItem("difficultyLevel", this.dataset.level);
         });
+    });
 
-        let savedDifficulty = localStorage.getItem("selectedDifficulty");
-        if (savedDifficulty) {
-            let selectedButton = document.querySelector(`.difficulty[data-level="${savedDifficulty}"]`);
-            if (selectedButton) {
-                selectedButton.classList.add("selected");
-            }
-        }
-    }
-
-    // ==============================
-    // 4. 戻るボタンの処理
-    // ==============================
+    // 戻るボタンの処理
     const backButton = document.getElementById("backButton");
     if (backButton) {
         backButton.addEventListener("click", function () {
