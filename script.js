@@ -25,16 +25,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const antigenCountInput = document.getElementById("antigenCount");
     const decreaseButton = document.getElementById("decrease");
     const increaseButton = document.getElementById("increase");
+    const nextButtonAntigen = document.getElementById("nextButton");
 
     if (antigenCountInput) {
         let antigenCount = 0;
+
         decreaseButton.addEventListener("click", () => {
             if (antigenCount > 0) antigenCount--;
             antigenCountInput.value = antigenCount;
         });
+
         increaseButton.addEventListener("click", () => {
             antigenCount++;
             antigenCountInput.value = antigenCount;
+        });
+
+        nextButtonAntigen.addEventListener("click", () => {
+            if (parseInt(antigenCountInput.value) >= 0) {
+                localStorage.setItem("antigenCount", antigenCountInput.value);
+                window.location.href = "quiz_level.html";
+            } else {
+                alert("抗原数を入力してください");
+            }
         });
     }
 
